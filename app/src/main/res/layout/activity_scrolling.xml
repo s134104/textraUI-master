@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="700dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#469ec9"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/contactName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Monica Geller"
+            android:textAlignment="center"
+            android:textColor="@color/whiteText"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/textheader"
+            android:layout_width="293dp"
+            android:layout_height="28dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/contactAvg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_weight="1"
+                android:text="CAVG"
+
+                android:textAlignment="center"
+                android:textColor="@color/whiteText"
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:id="@+id/youAvg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/contactName"
+                android:layout_weight="1"
+                android:text="Your average"
+                android:textColor="@color/whiteText"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/CavgInt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/youAvg"
+                android:layout_weight="1"
+                android:text="1.56    "
+                android:textColor="@color/whiteText"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/YavgInt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.34   "
+                android:textColor="@color/whiteText"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/chart1"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/header"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+
+
+</RelativeLayout>
