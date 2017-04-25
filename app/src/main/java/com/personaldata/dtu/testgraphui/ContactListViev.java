@@ -24,7 +24,7 @@ public class ContactListViev extends ListFragment {
 
     //  GUI Widget
     ListView lvMsg;
-
+//
     final int flag = 0; // 0 = Avg for all messages, overrides rangeInHours. 1 = Avg from today to rangeInHours. 2 = Avg from latest date in messages to rangeInHours
     final int rangeInHours = 168; // Compute averages for the past 7 days
 
