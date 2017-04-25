@@ -43,31 +43,31 @@ public class ScreenSlidePageFragment extends Fragment {
 
         String getTotalIn = getArguments().getString("TOTALIN");
         String getTotalOut = getArguments().getString("TOTALOUT");
-        String monday = getArguments().getString("MONDAY");
-        String tuesday = getArguments().getString("TUESDAY");
-        String wednesday = getArguments().getString("WEDNESDAY");
-        String thursday = getArguments().getString("THURSDAY");
-        String friday = getArguments().getString("FRIDAY");
-        String saturday = getArguments().getString("SATURDAY");
-        String sunday = getArguments().getString("SUNDAY");
+        int monday = getArguments().getInt("MONDAY");
+        int tuesday = getArguments().getInt("TUESDAY");
+        int wednesday = getArguments().getInt("WEDNESDAY");
+        int thursday = getArguments().getInt("THURSDAY");
+        int friday = getArguments().getInt("FRIDAY");
+        int saturday = getArguments().getInt("SATURDAY");
+        int sunday = getArguments().getInt("SUNDAY");
 
         TextView totalIN = (TextView) rootView.findViewById(R.id.totalIN);
         TextView totalOUT = (TextView) rootView.findViewById(R.id.totalOUT);
 
-        totalIN.setText(getTotalIn + "TEST");
-        totalOUT.setText(getTotalOut + "TEST");
+        totalIN.setText(getTotalIn);
+        totalOUT.setText(getTotalOut);
 
         BarChart barChart = (BarChart) rootView.findViewById(R.id.chart1);
 
         ArrayList<BarEntry> entries = new ArrayList<>();
 
-        entries.add(new BarEntry(1f, 15));
-        entries.add(new BarEntry(2f, 26));
-        entries.add(new BarEntry(3f, 21));
-        entries.add(new BarEntry(4f, 23));
-        entries.add(new BarEntry(5f, 45));
-        entries.add(new BarEntry(6f, 10));
-        entries.add(new BarEntry(7f, 27));
+        entries.add(new BarEntry(1f, monday));
+        entries.add(new BarEntry(2f, tuesday));
+        entries.add(new BarEntry(3f, wednesday));
+        entries.add(new BarEntry(4f, thursday));
+        entries.add(new BarEntry(5f, friday));
+        entries.add(new BarEntry(6f, saturday));
+        entries.add(new BarEntry(7f, sunday));
 
         IValueFormatter test = new DataValueFormatter();
 
@@ -138,7 +138,7 @@ public class ScreenSlidePageFragment extends Fragment {
 
 
     }
-    public static ScreenSlidePageFragment newInstance(String number, String in, String out, String mon, String tue, String wed, String thur, String fri, String sat, String sun) {
+    public static ScreenSlidePageFragment newInstance(String number, String in, String out, int mon, int tue, int wed, int thur, int fri, int sat, int sun) {
 
         ScreenSlidePageFragment f = new ScreenSlidePageFragment();
         Bundle intentMe = new Bundle();
@@ -146,13 +146,13 @@ public class ScreenSlidePageFragment extends Fragment {
         intentMe.putString("MY_PHONE_NUMBER", number);
         intentMe.putString("TOTALIN", in);
         intentMe.putString("TOTALOUT", out);
-        intentMe.putString("MONDAY", mon);
-        intentMe.putString("TUESDAY", tue);
-        intentMe.putString("WEDNESDAY", wed);
-        intentMe.putString("THURSDAY", thur);
-        intentMe.putString("FRIDAY", fri);
-        intentMe.putString("SATURDAY", sat);
-        intentMe.putString("SUNDAY", sun);
+        intentMe.putInt("MONDAY", mon);
+        intentMe.putInt("TUESDAY", tue);
+        intentMe.putInt("WEDNESDAY", wed);
+        intentMe.putInt("THURSDAY", thur);
+        intentMe.putInt("FRIDAY", fri);
+        intentMe.putInt("SATURDAY", sat);
+        intentMe.putInt("SUNDAY", sun);
 
         f.setArguments(intentMe);
 

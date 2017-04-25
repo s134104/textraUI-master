@@ -217,7 +217,7 @@ public class FragmentPagerSupport extends AppCompatActivity {
 
                 Log.i("MainActivity", "MY PHONE NUMBER: " + getMyNumber);
 
-                ScreenSlidePageFragment.newInstance(getMyNumber, computeTotalIn(), computeTotalOut(), getDailyAverageMe(2, 0, 168), getDailyAverageMe(3, 0, 168), getDailyAverageMe(4, 0, 168), getDailyAverageMe(5, 0, 168), getDailyAverageMe(6, 0, 168), getDailyAverageMe(7, 0, 168), getDailyAverageMe(1, 0, 168));
+                ScreenSlidePageFragment.newInstance(getMyNumber, computeTotalIn(), computeTotalOut(), getDailyAverageMeClean(2, 0, 168), getDailyAverageMeClean(3, 0, 168), getDailyAverageMeClean(4, 0, 168), getDailyAverageMeClean(5, 0, 168), getDailyAverageMeClean(6, 0, 168), getDailyAverageMeClean(7, 0, 168), getDailyAverageMeClean(1, 0, 168));
 
                 //intentMe.putString("MY_PHONE_NUMBER", getMyNumber);
 
@@ -502,6 +502,24 @@ public class FragmentPagerSupport extends AppCompatActivity {
         return convertToTime(sum);
     }
 
+    public int getDailyAverageMeClean(int day, int flag, int rangeInHours) {
+        ArrayList<Integer> meOut = new ArrayList<Integer>();
+        int sum = 0;
+
+        for(Contact getContact : contacts) {
+            meOut.add(getContact.computeDailyAverageOUT(day, flag, rangeInHours));
+        }
+
+        if(!meOut.isEmpty()) {
+            for (Integer avgMeOut : meOut) {
+                sum += avgMeOut;
+            }
+            return (sum / meOut.size()) / 60;
+        }
+
+        return sum / 60;
+    }
+
     public void enableBroadcastReceiver(){
         ComponentName receiver = new ComponentName(this, SmsService.class);
         PackageManager pm = this.getPackageManager();
@@ -556,10 +574,10 @@ public class FragmentPagerSupport extends AppCompatActivity {
                         return Contacts.newInstance("Contacts, Instance 2");
                     //
                     case 1:
-                        return ScreenSlidePageFragment.newInstance(getMyNumber, computeTotalIn(), computeTotalOut(), getDailyAverageMe(2, 0, 168), getDailyAverageMe(3, 0, 168), getDailyAverageMe(4, 0, 168), getDailyAverageMe(5, 0, 168), getDailyAverageMe(6, 0, 168), getDailyAverageMe(7, 0, 168), getDailyAverageMe(1, 0, 168));
+                        return ScreenSlidePageFragment.newInstance(getMyNumber, computeTotalIn(), computeTotalOut(), getDailyAverageMeClean(2, 0, 168), getDailyAverageMeClean(3, 0, 168), getDailyAverageMeClean(4, 0, 168), getDailyAverageMeClean(5, 0, 168), getDailyAverageMeClean(6, 0, 168), getDailyAverageMeClean(7, 0, 168), getDailyAverageMeClean(1, 0, 168));
 
                     default:
-                        return ScreenSlidePageFragment.newInstance(getMyNumber, computeTotalIn(), computeTotalOut(), getDailyAverageMe(2, 0, 168), getDailyAverageMe(3, 0, 168), getDailyAverageMe(4, 0, 168), getDailyAverageMe(5, 0, 168), getDailyAverageMe(6, 0, 168), getDailyAverageMe(7, 0, 168), getDailyAverageMe(1, 0, 168));
+                        return ScreenSlidePageFragment.newInstance(getMyNumber, computeTotalIn(), computeTotalOut(), getDailyAverageMeClean(2, 0, 168), getDailyAverageMeClean(3, 0, 168), getDailyAverageMeClean(4, 0, 168), getDailyAverageMeClean(5, 0, 168), getDailyAverageMeClean(6, 0, 168), getDailyAverageMeClean(7, 0, 168), getDailyAverageMeClean(1, 0, 168));
                 }
         }
         @Override
