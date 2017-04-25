@@ -4,12 +4,7 @@
     android:gravity="center_horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="65dp"
-    android:orientation = "vertical"
-    android:weightSum="1"
-    android:layout_weight="0.19">
+
 
 
     <com.personaldata.dtu.testgraphui.SlidingTabLayout
@@ -19,7 +14,115 @@
         android:layout_height="wrap_content"
         android:paddingBottom="6dp" />
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#469ec9"
+        android:gravity="center"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/headerinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Contact              "
+                android:textColor="@color/whiteText"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/contactName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:text="IN"
+                android:textAlignment="center"
+                android:textColor="@color/whiteText"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="100dp"
+                android:text="OUT"
+                android:textAlignment="center"
+                android:textColor="@color/whiteText"
+                android:textSize="20dp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/textheader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/contactAvg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Monica   |"
+
+                android:textAlignment="center"
+                android:textColor="@color/whiteText"
+                android:textSize="15dp" />
+
+
+            <TextView
+                android:id="@+id/youAvg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/contactName"
+                android:layout_weight="1"
+                android:text="   Me"
+                android:textColor="@color/whiteText"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/CavgInt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/youAvg"
+                android:layout_weight="1"
+                android:layout_marginLeft="40dp"
+                android:text="1.56   "
+                android:textColor="@color/whiteText"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/YavgInt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.34   "
+                android:textColor="@color/whiteText"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 
     <android.support.v4.view.ViewPager

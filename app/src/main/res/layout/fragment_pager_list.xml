@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
+    <!--
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
@@ -63,34 +64,31 @@
                 android:text=" Me" />
         </LinearLayout>
 
-    </LinearLayout>
+    </LinearLayout> -->
 
 
     <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-        android:layout_weight="1">
+        >
 
     <TextView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="min"
         android:layout_weight="1"
         />
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/chart1"
-        android:layout_width="230dp"
-        android:layout_height="238dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@id/header"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_weight="2.65" />
 
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp" />
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart1"
+            android:layout_width="314dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginRight="35dp"
+            android:layout_below="@id/header" />
+
+
 </LinearLayout>
 </LinearLayout>

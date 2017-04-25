@@ -57,6 +57,7 @@ public class FragmentPagerSupport extends AppCompatActivity {
 
     //  GUI Widget
     ListView lvMsg;
+    TextView ContactHeader,In_contactName, Out,avg_Hme,  avg_Hcontact,  avg_me,avg_contact;
 
     // Cursor Adapter
     CustomAdapter adapter;
@@ -83,6 +84,18 @@ public class FragmentPagerSupport extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_pager);
+
+
+
+        //defining all element in header and thereby being able to change
+       ContactHeader = (TextView) findViewById(R.id.headerinfo);
+        In_contactName = (TextView) findViewById(R.id.contactName);
+        Out = (TextView) findViewById(R.id.out);
+        avg_Hme = (TextView) findViewById(R.id.youAvg);
+        avg_Hcontact = (TextView) findViewById(R.id.contactAvg);
+        avg_me= (TextView) findViewById(R.id.YavgInt);
+        avg_contact= (TextView) findViewById(R.id.CavgInt);
+
 
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
@@ -369,10 +382,10 @@ public class FragmentPagerSupport extends AppCompatActivity {
 
         }
 
-        Log.i("MainActivity", "SUNDAYS: " + getContact("50954535").getDaysOfWeekIN(0, 168).get(1).size());
-        Log.i("MainActivity", "AVERAGE SUNDAYS: " + convertToTime(getContact("50954535").computeDailyAverageIN(1, 0, 168)));
-        Log.i("MainActivity", "TOTAL IN: " + computeTotalIn());
-        Log.i("MainActivity", "TOTAL OUT: " + computeTotalOut());
+       // Log.i("MainActivity", "SUNDAYS: " + getContact("50954535").getDaysOfWeekIN(0, 168).get(1).size());
+       // Log.i("MainActivity", "AVERAGE SUNDAYS: " + convertToTime(getContact("50954535").computeDailyAverageIN(1, 0, 168)));
+       // Log.i("MainActivity", "TOTAL IN: " + computeTotalIn());
+       // Log.i("MainActivity", "TOTAL OUT: " + computeTotalOut());
 
         //Log.i("MainActivity", "GET RESPONSE TIMES OUT: " +  getContact("PHONENUMBERHERE").computeResponseTimesOut().toString());
         //Log.i("MainActivity", "GET AVERAGE RESPONSE TIMES OUT: " +  convertToTime(getContact("PHONENUMBERHERE").computeAverageRTOut(flag, rangeInHours)));
@@ -544,6 +557,8 @@ public class FragmentPagerSupport extends AppCompatActivity {
         @Override
             public Fragment getItem(int pos) {
 
+
+
             TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
             String getMyNumber = tm.getLine1Number();
 
@@ -551,14 +566,61 @@ public class FragmentPagerSupport extends AppCompatActivity {
                 // Remove country number prefix. Need to add 00-prefix too.
                 getMyNumber = getMyNumber.substring(3, getMyNumber.length());
 
+
+
                 switch(pos) {
                     case 0:
+
+
+                        ContactHeader.setVisibility(View.VISIBLE);
+                        //TODO it needs to call a method based on contact name in list
+                        In_contactName.setText("IN");
+                        In_contactName.setPadding(90, 0,0,0);
+
+                        Out.setVisibility(View.VISIBLE);
+                        avg_Hme.setVisibility(View.INVISIBLE);
+                        avg_Hcontact.setVisibility(View.INVISIBLE);
+                        avg_me.setVisibility(View.INVISIBLE);
+                        avg_contact.setVisibility(View.INVISIBLE);
+
                         return ContactListViev.newInstance("Contacts, Instance 2");
-                    //
+
                     case 1:
+
+                        ContactHeader.setVisibility(View.VISIBLE);
+                        //TODO it needs to call a method based on contact name in list
+                        In_contactName.setText("Monica Geller");
+
+                        Out.setVisibility(View.INVISIBLE);
+                        avg_Hme.setVisibility(View.VISIBLE);
+                        avg_Hcontact.setVisibility(View.VISIBLE);
+                        //TODO it needs to call a method based on contact name in list
+                        avg_Hcontact.setText("Monica");
+                        avg_me.setVisibility(View.VISIBLE);
+                        //TODO it needs to call a method based on average
+                        avg_me.setText("1.77");
+                        avg_contact.setVisibility(View.VISIBLE);
+                        avg_contact.setText("2.89");
+
+
                         return ScreenSlidePageFragment.newInstance(getMyNumber, computeTotalIn(), computeTotalOut(), getDailyAverageMeClean(2, 0, 168), getDailyAverageMeClean(3, 0, 168), getDailyAverageMeClean(4, 0, 168), getDailyAverageMeClean(5, 0, 168), getDailyAverageMeClean(6, 0, 168), getDailyAverageMeClean(7, 0, 168), getDailyAverageMeClean(1, 0, 168));
 
                     default:
+                        ContactHeader.setVisibility(View.VISIBLE);
+                        //TODO it needs to call a method based on contact name in list
+                        In_contactName.setText("Monica Geller");
+
+                        Out.setVisibility(View.INVISIBLE);
+                        avg_Hme.setVisibility(View.VISIBLE);
+                        avg_Hcontact.setVisibility(View.VISIBLE);
+                        //TODO it needs to call a method based on contact name in list
+                        avg_Hcontact.setText("Monica");
+                        avg_me.setVisibility(View.VISIBLE);
+                        //TODO it needs to call a method based on average
+                        avg_me.setText("1.77");
+                        avg_contact.setVisibility(View.VISIBLE);
+                        avg_contact.setText("2.89");
+
                         return ScreenSlidePageFragment.newInstance(getMyNumber, computeTotalIn(), computeTotalOut(), getDailyAverageMeClean(2, 0, 168), getDailyAverageMeClean(3, 0, 168), getDailyAverageMeClean(4, 0, 168), getDailyAverageMeClean(5, 0, 168), getDailyAverageMeClean(6, 0, 168), getDailyAverageMeClean(7, 0, 168), getDailyAverageMeClean(1, 0, 168));
                 }
         }

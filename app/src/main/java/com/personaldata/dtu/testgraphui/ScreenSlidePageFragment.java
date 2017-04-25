@@ -51,12 +51,12 @@ public class ScreenSlidePageFragment extends Fragment {
         int saturday = getArguments().getInt("SATURDAY");
         int sunday = getArguments().getInt("SUNDAY");
 
-        TextView totalIN = (TextView) rootView.findViewById(R.id.totalIN);
-        TextView totalOUT = (TextView) rootView.findViewById(R.id.totalOUT);
+       /* TextView totalIN = (TextView) rootView.findViewById(R.id.CavgInt);
+        TextView totalOUT = (TextView) rootView.findViewById(R.id.YavgInt);
 
         totalIN.setText(getTotalIn);
         totalOUT.setText(getTotalOut);
-
+*/
         BarChart barChart = (BarChart) rootView.findViewById(R.id.chart1);
 
         ArrayList<BarEntry> entries = new ArrayList<>();

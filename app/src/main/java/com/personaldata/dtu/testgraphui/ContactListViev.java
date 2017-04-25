@@ -37,6 +37,7 @@ public class ContactListViev extends ListFragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.fragment_contactlist, container, false);
 
+
         final FragmentPagerSupport getActivity = (FragmentPagerSupport) getActivity();
 
         lvMsg = (ListView) rootView.findViewById(android.R.id.list);
