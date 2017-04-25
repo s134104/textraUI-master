@@ -554,6 +554,7 @@ public class FragmentPagerSupport extends AppCompatActivity {
                 switch(pos) {
                     case 0:
                         return Contacts.newInstance("Contacts, Instance 2");
+                    //
                     case 1:
                         return ScreenSlidePageFragment.newInstance(getMyNumber, computeTotalIn(), computeTotalOut(), getDailyAverageMe(2, 0, 168), getDailyAverageMe(3, 0, 168), getDailyAverageMe(4, 0, 168), getDailyAverageMe(5, 0, 168), getDailyAverageMe(6, 0, 168), getDailyAverageMe(7, 0, 168), getDailyAverageMe(1, 0, 168));
 
