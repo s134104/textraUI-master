@@ -1,27 +1,20 @@
 package com.personaldata.dtu.testgraphui;
 
-import android.Manifest;
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
-import android.os.Parcelable;
-import android.os.StrictMode;
 import android.preference.PreferenceManager;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
@@ -32,10 +25,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,10 +35,7 @@ import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import java.util.Locale;
 
@@ -537,7 +525,7 @@ public class FragmentPagerSupport extends AppCompatActivity {
 
                 switch(pos) {
                     case 0:
-                        return Contacts.newInstance("Contacts, Instance 2");
+                        return ContactListViev.newInstance("Contacts, Instance 2");
                     //
                     case 1:
                         return ScreenSlidePageFragment.newInstance(getMyNumber, computeTotalIn(), computeTotalOut(), getDailyAverageMeClean(2, 0, 168), getDailyAverageMeClean(3, 0, 168), getDailyAverageMeClean(4, 0, 168), getDailyAverageMeClean(5, 0, 168), getDailyAverageMeClean(6, 0, 168), getDailyAverageMeClean(7, 0, 168), getDailyAverageMeClean(1, 0, 168));

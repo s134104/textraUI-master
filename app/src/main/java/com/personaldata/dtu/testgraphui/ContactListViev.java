@@ -13,17 +13,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.github.mikephil.charting.charts.BarChart;
-
 import java.util.ArrayList;
 
-public class Contacts extends ListFragment {
+public class ContactListViev extends ListFragment {
 
     //  GUI Widget
     ListView lvMsg;
@@ -87,7 +84,7 @@ public class Contacts extends ListFragment {
         Context context;
         ArrayList<Contact> getContacts;
 
-        public CustomAdapter(Contacts activity, ArrayList<Contact> getContacts) {
+        public CustomAdapter(ContactListViev activity, ArrayList<Contact> getContacts) {
 
             this.context = activity.getContext();
             this.getContacts = getContacts;
@@ -147,9 +144,9 @@ public class Contacts extends ListFragment {
     }
 
 
-    public static Contacts newInstance(String text) {
+    public static ContactListViev newInstance(String text) {
 
-        Contacts f = new Contacts();
+        ContactListViev f = new ContactListViev();
         Bundle b = new Bundle();
         b.putString("msg", text);
 
