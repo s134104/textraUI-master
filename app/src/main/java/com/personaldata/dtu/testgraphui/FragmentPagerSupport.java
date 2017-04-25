@@ -119,40 +119,6 @@ public class FragmentPagerSupport extends AppCompatActivity {
             stopService(intent);
         }
 
-//        lvMsg = (ListView) findViewById(R.id.lvMsg);
-//        adapter = new CustomAdapter(this, getContacts());
-//        lvMsg.setAdapter(adapter);
-//
-//        lvMsg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//                try {
-//                    Log.i("MainActivity", getContacts().get(position).getContactName(getApplicationContext()));
-//
-//                    Intent intent = new Intent(getBaseContext(), ContactInfo.class);
-//                    intent.putExtra("PHONE_NUMBER", getContacts().get(position).getContactNumber());
-//                    intent.putExtra("CONTACT_NAME", getContacts().get(position).getContactName(getApplicationContext()));
-//
-//                    intent.putExtra("MONDAY", convertToTime(getContacts().get(position).computeDailyAverageIN(2, 0, 168)));
-//                    intent.putExtra("TUESDAY", convertToTime(getContacts().get(position).computeDailyAverageIN(3, 0, 168)));
-//                    intent.putExtra("WEDNESDAY", convertToTime(getContacts().get(position).computeDailyAverageIN(4, 0, 168)));
-//                    intent.putExtra("THURSDAY", convertToTime(getContacts().get(position).computeDailyAverageIN(5, 0, 168)));
-//                    intent.putExtra("FRIDAY", convertToTime(getContacts().get(position).computeDailyAverageIN(6, 0, 168)));
-//                    intent.putExtra("SATURDAY", convertToTime(getContacts().get(position).computeDailyAverageIN(7, 0, 168)));
-//                    intent.putExtra("SUNDAY", convertToTime(getContacts().get(position).computeDailyAverageIN(1, 0, 168)));
-//
-//                    startActivity(intent);
-//
-//                } catch(NullPointerException e) {
-//                    // Show Alert
-//                    Toast.makeText(getApplicationContext(), "Contact not in phonebook.", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//
-//        });
-
     }
 
 
