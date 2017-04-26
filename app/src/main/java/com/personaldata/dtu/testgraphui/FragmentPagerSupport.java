@@ -198,31 +198,6 @@ public class FragmentPagerSupport extends AppCompatActivity {
 
                 ScreenSlidePageFragment.newInstance(getMyNumber, computeTotalIn(), computeTotalOut(), getDailyAverageMeClean(2, 0, 168), getDailyAverageMeClean(3, 0, 168), getDailyAverageMeClean(4, 0, 168), getDailyAverageMeClean(5, 0, 168), getDailyAverageMeClean(6, 0, 168), getDailyAverageMeClean(7, 0, 168), getDailyAverageMeClean(1, 0, 168));
 
-                //intentMe.putString("MY_PHONE_NUMBER", getMyNumber);
-
-                /*
-                intentMe.putExtra("MONDAY", convertToTime(getContact(getMyNumber).computeDailyAverageOUT(2, 0, 168)));
-                intentMe.putExtra("TUESDAY", convertToTime(getContact(getMyNumber).computeDailyAverageOUT(3, 0, 168)));
-                intentMe.putExtra("WEDNESDAY", convertToTime(getContact(getMyNumber).computeDailyAverageOUT(4, 0, 168)));
-                intentMe.putExtra("THURSDAY", convertToTime(getContact(getMyNumber).computeDailyAverageOUT(5, 0, 168)));
-                intentMe.putExtra("FRIDAY", convertToTime(getContact(getMyNumber).computeDailyAverageOUT(6, 0, 168)));
-                intentMe.putExtra("SATURDAY", convertToTime(getContact(getMyNumber).computeDailyAverageOUT(7, 0, 168)));
-                intentMe.putExtra("SUNDAY", convertToTime(getContact(getMyNumber).computeDailyAverageOUT(1, 0, 168)));
-
-                intentMe.putString("TOTALIN", computeTotalIn());
-                intentMe.putString("TOTALOUT", computeTotalOut());
-                intentMe.putString("MONDAY", getDailyAverageMe(2, 0, 168));
-                intentMe.putString("TUESDAY", getDailyAverageMe(3, 0, 168));
-                intentMe.putString("WEDNESDAY", getDailyAverageMe(4, 0, 168));
-                intentMe.putString("THURSDAY", getDailyAverageMe(5, 0, 168));
-                intentMe.putString("FRIDAY", getDailyAverageMe(6, 0, 168));
-                intentMe.putString("SATURDAY", getDailyAverageMe(7, 0, 168));
-                intentMe.putString("SUNDAY", getDailyAverageMe(1, 0, 168));
-                */
-
-                //ScreenSlidePageFragment fragobj = new ScreenSlidePageFragment();
-                //fragobj.setArguments(intentMe);
-
                 return true;
             case R.id.export:
                 String fileName = "log_data.txt";
